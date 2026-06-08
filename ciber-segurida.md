@@ -1,9 +1,13 @@
 contraseñas inseguras:
 - Password123!
 - P@$$w0rd!
+- P4ssw@rd!
+
+seguras, pero recomensable cambiar:
+- Teclado2026$
 
 seguras[¹]:
-- Teclado2026$
+- --Teclado2026$--
 - caballo-computadora-azul-brillante
 
 
@@ -12,6 +16,7 @@ Pruebas:
 https://it-tools.tech/password-strength-analyser
 https://bitwarden.com/password-strength/
 https://haveibeenpwned.com/Passwords
+https://password.kaspersky.com/
 
 Explicacion: [Password Strength de xkcd](https://xkcd.com/936/)
 

@@ -1,35 +1,11 @@
-src/
-├── main.rs          # Punto de entrada (inicializa y conecta todo)
-├── domain/          # Lógica pura de negocio (Estructuras de datos, Enums)
-│   ├── mod.rs
-│   ├── mod.rs
-│   └── user.rs
-├── ports/           # Traits que definen las reglas de juego
-│   ├── mod.rs
-│   └── database.rs  # e.g., pub trait UserRepository { ... }
-└── adapters/        # Implementaciones técnicas reales
-    ├── mod.rs
-    ├── postgres.rs  # Implementa UserRepository usando SQLx
-    └── http/        # Controladores web (Axum/Actix)
-
-src/
-├── adaptadores
-│   ├── mod.rs
-│   └── vista
-│       └── mod.rs
-├── dominio
-│   ├── aplicacion
-│   │   └── mod.rs
-│   ├── entidad
-│   │   └── mod.rs
-│   └── mod.rs
-├── main.rs
-└── puertos
-    └── mod.rs
-
-
-Dominio, aqui solo va las entidades mas basicas, con metodos propios
-Puertos, los traits para comunicarse con las entidades
-Los servicios van en aplicion, la logica de negocio, puede crear nuevos traits
-Adaptadores, aqui se implementa los traits (bd)
-Vista, aqui colocare la logica frontal
+- Dominio, entidades, con metodos propios
+- Puertos, exponen entidades y metodos del dominio
+    - entrada: reciben datos
+        - entran a dar
+    - salida: piden datos del exterior
+        - salen a pedir
+- Aplicion, la logica de negocio, los servicios
+- Adaptadores, aqui se implementa los traits
+    - entrada: entra los datos al dominio
+    - salida: sale los datos del dominio
+- Vista, aqui colocare la logica frontal
