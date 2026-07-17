@@ -179,29 +179,29 @@ fn boton_login(
           } else {
             match Usuario::new(u.clone(), c.clone()) {
               Ok(usuario) => {
-                spawn(async move {
-                  let caso_login = CasoLogin::new((*contenedor_repos.read().empleado_repo).clone());
-                  let empleado = match caso_login.ejecutar(usuario).await {
-                    Ok(ok) => {
-                      if let EmpleadoEnum::Activo(empl) = &ok {
-                        tracing::debug!("Empleado accedio con exito: {empl:?}");
-                        *login_estado.write() = EstadoLogin::Exito;
-                        ok
-                      } else {
-                        return;
-                      }
-                    }
-                    Err(e) => {
-                      tracing::debug!("Error al acceder: {e:?}");
-                      *login_estado.write() = EstadoLogin::Invalido;
-                      return;
-                    }
-                  };
-                  tracing::debug!("Cambiando el empleado default");
-                  *empleado_global.write() = empleado;
-                });
+                // spawn(async move {
+                //   let caso_login = CasoLogin::new((*contenedor_repos.read().empleado_repo).clone());
+                //   let empleado = match caso_login.ejecutar(usuario).await {
+                //     Ok(ok) => {
+                //       if let EmpleadoEnum::Activo(empl) = &ok {
+                //         tracing::debug!("Empleado accedio con exito: {empl:?}");
+                //         *login_estado.write() = EstadoLogin::Exito;
+                //         ok
+                //       } else {
+                //         return;
+                //       }
+                //     }
+                //     Err(e) => {
+                //       tracing::debug!("Error al acceder: {e:?}");
+                //       *login_estado.write() = EstadoLogin::Invalido;
+                //       return;
+                //     }
+                //   };
+                //   tracing::debug!("Cambiando el empleado default");
+                //   *empleado_global.write() = empleado;
+                // });
                 // comentar lo anterior y descomentar lo siguiente para presentar al docente:
-                // *login_estado.write() = EstadoLogin::Exito;
+                *login_estado.write() = EstadoLogin::Exito;
               }
               Err(e) => {
                 *login_estado.write() = EstadoLogin::Invalido;

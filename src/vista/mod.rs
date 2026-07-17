@@ -6,7 +6,7 @@ use crate::vista::{
   login::EstadoLogin,
   temas::{tema_claro_no_state, tema_oscuro_no_state},
 };
-use hexagonal_gimnasio::empleado::dominio::empleado::EmpleadoEnum;
+use hexagonal_gimnasio::empleado::dominio::empleado::{Empleado, EmpleadoEnum, Permisos};
 use infraestructura::persistencia::mysql::contenedor::ContenedorRepos;
 
 pub(crate) mod componentes;
@@ -26,7 +26,11 @@ pub(crate) fn app(bd: State<ContenedorRepos>, conf: State<ConfiguracionGim>) -> 
   use_provide_theme(|| tema);
   let empleado = use_state(|| {
     tracing::info!("creando enum empleado vacio");
-    EmpleadoEnum::Vacio
+    EmpleadoEnum::Activo(Empleado::existente(
+      1,
+      Permisos::ADMINISTRADOR,
+      "Administrador".to_string(),
+    ))
   });
   use_provide_context(|| empleado);
 
