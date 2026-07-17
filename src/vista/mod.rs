@@ -44,7 +44,7 @@ pub(crate) fn app(bd: State<ContenedorRepos>, conf: State<ConfiguracionGim>) -> 
 
   rect().expanded().theme_background().theme_color().child(
     if EstadoLogin::Exito == *estado_login.read() {
-      Router::<Rutas>::new(|| RouterConfig::default().with_initial_path(Rutas::Inicio))
+      Router::<Rutas>::new(|| RouterConfig::default().with_initial_path(Rutas::GestionSociosGui))
         .into_element()
     } else {
       login::login().into_element()
