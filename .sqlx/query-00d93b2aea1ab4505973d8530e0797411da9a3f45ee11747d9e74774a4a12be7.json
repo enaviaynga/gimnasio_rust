@@ -1,0 +1,133 @@
+{
+  "db_name": "MySQL",
+  "query": "\n        SELECT\n            s.nombre AS nombre_socio,\n            s.apellidos AS apellido_socio,\n            s.dni AS dni_socio,\n            a.idAsistencia AS id_asistencia,\n            a.fecha AS fecha_asistencia,\n            a.horaIngreso AS hora_asistencia,\n            a.resultadoValidacion AS resultado_val\n        FROM asistencia a\n        INNER JOIN socios s ON a.idsocio = s.idsocio\n        WHERE s.activo = TRUE\n      ",
+  "describe": {
+    "columns": [
+      {
+        "ordinal": 0,
+        "name": "nombre_socio",
+        "type_info": {
+          "type": "VarString",
+          "flags": "NOT_NULL | NO_DEFAULT_VALUE",
+          "collation": 255,
+          "max_size": 200
+        },
+        "origin": {
+          "Table": {
+            "table": "gym_gestion_db.socios",
+            "name": "nombre"
+          }
+        }
+      },
+      {
+        "ordinal": 1,
+        "name": "apellido_socio",
+        "type_info": {
+          "type": "VarString",
+          "flags": "NOT_NULL | NO_DEFAULT_VALUE",
+          "collation": 255,
+          "max_size": 200
+        },
+        "origin": {
+          "Table": {
+            "table": "gym_gestion_db.socios",
+            "name": "apellidos"
+          }
+        }
+      },
+      {
+        "ordinal": 2,
+        "name": "dni_socio",
+        "type_info": {
+          "type": "VarString",
+          "flags": "NOT_NULL | UNIQUE_KEY | NO_DEFAULT_VALUE",
+          "collation": 255,
+          "max_size": 32
+        },
+        "origin": {
+          "Table": {
+            "table": "gym_gestion_db.socios",
+            "name": "dni"
+          }
+        }
+      },
+      {
+        "ordinal": 3,
+        "name": "id_asistencia",
+        "type_info": {
+          "type": "Long",
+          "flags": "NOT_NULL | PRIMARY_KEY | UNSIGNED | AUTO_INCREMENT",
+          "collation": 63,
+          "max_size": 10
+        },
+        "origin": {
+          "Table": {
+            "table": "gym_gestion_db.asistencia",
+            "name": "idAsistencia"
+          }
+        }
+      },
+      {
+        "ordinal": 4,
+        "name": "fecha_asistencia",
+        "type_info": {
+          "type": "Date",
+          "flags": "NOT_NULL | BINARY | NO_DEFAULT_VALUE",
+          "collation": 63,
+          "max_size": 10
+        },
+        "origin": {
+          "Table": {
+            "table": "gym_gestion_db.asistencia",
+            "name": "fecha"
+          }
+        }
+      },
+      {
+        "ordinal": 5,
+        "name": "hora_asistencia",
+        "type_info": {
+          "type": "Time",
+          "flags": "NOT_NULL | BINARY | NO_DEFAULT_VALUE",
+          "collation": 63,
+          "max_size": 10
+        },
+        "origin": {
+          "Table": {
+            "table": "gym_gestion_db.asistencia",
+            "name": "horaIngreso"
+          }
+        }
+      },
+      {
+        "ordinal": 6,
+        "name": "resultado_val",
+        "type_info": {
+          "type": "VarString",
+          "flags": "NOT_NULL | NO_DEFAULT_VALUE",
+          "collation": 255,
+          "max_size": 200
+        },
+        "origin": {
+          "Table": {
+            "table": "gym_gestion_db.asistencia",
+            "name": "resultadoValidacion"
+          }
+        }
+      }
+    ],
+    "parameters": {
+      "Right": 0
+    },
+    "nullable": [
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ]
+  },
+  "hash": "00d93b2aea1ab4505973d8530e0797411da9a3f45ee11747d9e74774a4a12be7"
+}

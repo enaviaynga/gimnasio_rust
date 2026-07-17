@@ -1,0 +1,65 @@
+{
+  "db_name": "MySQL",
+  "query": "SELECT idsocio, nombre, apellidos FROM socios WHERE dni = ? LIMIT 1;",
+  "describe": {
+    "columns": [
+      {
+        "ordinal": 0,
+        "name": "idsocio",
+        "type_info": {
+          "type": "Long",
+          "flags": "NOT_NULL | PRIMARY_KEY | UNSIGNED | AUTO_INCREMENT",
+          "collation": 63,
+          "max_size": 10
+        },
+        "origin": {
+          "Table": {
+            "table": "gym_gestion_db.socios",
+            "name": "idsocio"
+          }
+        }
+      },
+      {
+        "ordinal": 1,
+        "name": "nombre",
+        "type_info": {
+          "type": "VarString",
+          "flags": "NOT_NULL | NO_DEFAULT_VALUE",
+          "collation": 255,
+          "max_size": 200
+        },
+        "origin": {
+          "Table": {
+            "table": "gym_gestion_db.socios",
+            "name": "nombre"
+          }
+        }
+      },
+      {
+        "ordinal": 2,
+        "name": "apellidos",
+        "type_info": {
+          "type": "VarString",
+          "flags": "NOT_NULL | NO_DEFAULT_VALUE",
+          "collation": 255,
+          "max_size": 200
+        },
+        "origin": {
+          "Table": {
+            "table": "gym_gestion_db.socios",
+            "name": "apellidos"
+          }
+        }
+      }
+    ],
+    "parameters": {
+      "Right": 1
+    },
+    "nullable": [
+      false,
+      false,
+      false
+    ]
+  },
+  "hash": "e6b4dfda714b18b32e37999e488f9ecab6c71c5291c97065fea154377aef81be"
+}

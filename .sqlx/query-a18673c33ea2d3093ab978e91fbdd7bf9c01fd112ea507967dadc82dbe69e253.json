@@ -1,0 +1,94 @@
+{
+  "db_name": "MySQL",
+  "query": "\n        SELECT\n            idsocio AS \"id_socio: u32\",\n            CONCAT(apellidos, ', ', nombre) AS \"nombre_completo!\",\n            dni,\n            telefono,\n            correo\n        FROM socios\n        WHERE activo = 0\n        ORDER BY apellidos ASC, nombre ASC;\n        ",
+  "describe": {
+    "columns": [
+      {
+        "ordinal": 0,
+        "name": "id_socio: u32",
+        "type_info": {
+          "type": "Long",
+          "flags": "NOT_NULL | PRIMARY_KEY | UNSIGNED | AUTO_INCREMENT",
+          "collation": 63,
+          "max_size": 10
+        },
+        "origin": {
+          "Table": {
+            "table": "gym_gestion_db.socios",
+            "name": "idsocio"
+          }
+        }
+      },
+      {
+        "ordinal": 1,
+        "name": "nombre_completo!",
+        "type_info": {
+          "type": "VarString",
+          "flags": "",
+          "collation": 255,
+          "max_size": 408
+        },
+        "origin": "Expression"
+      },
+      {
+        "ordinal": 2,
+        "name": "dni",
+        "type_info": {
+          "type": "VarString",
+          "flags": "NOT_NULL | UNIQUE_KEY | NO_DEFAULT_VALUE",
+          "collation": 255,
+          "max_size": 32
+        },
+        "origin": {
+          "Table": {
+            "table": "gym_gestion_db.socios",
+            "name": "dni"
+          }
+        }
+      },
+      {
+        "ordinal": 3,
+        "name": "telefono",
+        "type_info": {
+          "type": "VarString",
+          "flags": "",
+          "collation": 255,
+          "max_size": 60
+        },
+        "origin": {
+          "Table": {
+            "table": "gym_gestion_db.socios",
+            "name": "telefono"
+          }
+        }
+      },
+      {
+        "ordinal": 4,
+        "name": "correo",
+        "type_info": {
+          "type": "VarString",
+          "flags": "",
+          "collation": 255,
+          "max_size": 400
+        },
+        "origin": {
+          "Table": {
+            "table": "gym_gestion_db.socios",
+            "name": "correo"
+          }
+        }
+      }
+    ],
+    "parameters": {
+      "Right": 0
+    },
+    "nullable": [
+      false,
+      true,
+      false,
+      true,
+      true
+    ]
+  },
+  "hash": "a18673c33ea2d3093ab978e91fbdd7bf9c01fd112ea507967dadc82dbe69e253"
+}

@@ -1,0 +1,167 @@
+{
+  "db_name": "MySQL",
+  "query": "SELECT\n          s.nombre,\n          s.apellidos,\n          s.dni,\n          m.idMembresia,\n          m.idsocio,\n          m.tipoMembresia,\n          m.fechaInicio,\n          m.fechaVencimiento,\n          m.costo\n      FROM\n          socios s\n      INNER JOIN\n          membresias m ON s.idsocio = m.idsocio\n      WHERE\n          s.dni = ?\n      ORDER BY\n          m.fechaInicio DESC, m.idMembresia DESC\n      LIMIT 1;",
+  "describe": {
+    "columns": [
+      {
+        "ordinal": 0,
+        "name": "nombre",
+        "type_info": {
+          "type": "VarString",
+          "flags": "NOT_NULL | NO_DEFAULT_VALUE",
+          "collation": 255,
+          "max_size": 200
+        },
+        "origin": {
+          "Table": {
+            "table": "gym_gestion_db.socios",
+            "name": "nombre"
+          }
+        }
+      },
+      {
+        "ordinal": 1,
+        "name": "apellidos",
+        "type_info": {
+          "type": "VarString",
+          "flags": "NOT_NULL | NO_DEFAULT_VALUE",
+          "collation": 255,
+          "max_size": 200
+        },
+        "origin": {
+          "Table": {
+            "table": "gym_gestion_db.socios",
+            "name": "apellidos"
+          }
+        }
+      },
+      {
+        "ordinal": 2,
+        "name": "dni",
+        "type_info": {
+          "type": "VarString",
+          "flags": "NOT_NULL | UNIQUE_KEY | NO_DEFAULT_VALUE",
+          "collation": 255,
+          "max_size": 32
+        },
+        "origin": {
+          "Table": {
+            "table": "gym_gestion_db.socios",
+            "name": "dni"
+          }
+        }
+      },
+      {
+        "ordinal": 3,
+        "name": "idMembresia",
+        "type_info": {
+          "type": "Long",
+          "flags": "NOT_NULL | PRIMARY_KEY | UNSIGNED | AUTO_INCREMENT",
+          "collation": 63,
+          "max_size": 10
+        },
+        "origin": {
+          "Table": {
+            "table": "gym_gestion_db.membresias",
+            "name": "idMembresia"
+          }
+        }
+      },
+      {
+        "ordinal": 4,
+        "name": "idsocio",
+        "type_info": {
+          "type": "Long",
+          "flags": "NOT_NULL | MULTIPLE_KEY | UNSIGNED | NO_DEFAULT_VALUE",
+          "collation": 63,
+          "max_size": 10
+        },
+        "origin": {
+          "Table": {
+            "table": "gym_gestion_db.membresias",
+            "name": "idsocio"
+          }
+        }
+      },
+      {
+        "ordinal": 5,
+        "name": "tipoMembresia",
+        "type_info": {
+          "type": "VarString",
+          "flags": "NOT_NULL | NO_DEFAULT_VALUE",
+          "collation": 255,
+          "max_size": 200
+        },
+        "origin": {
+          "Table": {
+            "table": "gym_gestion_db.membresias",
+            "name": "tipoMembresia"
+          }
+        }
+      },
+      {
+        "ordinal": 6,
+        "name": "fechaInicio",
+        "type_info": {
+          "type": "Date",
+          "flags": "NOT_NULL | BINARY | NO_DEFAULT_VALUE",
+          "collation": 63,
+          "max_size": 10
+        },
+        "origin": {
+          "Table": {
+            "table": "gym_gestion_db.membresias",
+            "name": "fechaInicio"
+          }
+        }
+      },
+      {
+        "ordinal": 7,
+        "name": "fechaVencimiento",
+        "type_info": {
+          "type": "Date",
+          "flags": "NOT_NULL | BINARY | NO_DEFAULT_VALUE",
+          "collation": 63,
+          "max_size": 10
+        },
+        "origin": {
+          "Table": {
+            "table": "gym_gestion_db.membresias",
+            "name": "fechaVencimiento"
+          }
+        }
+      },
+      {
+        "ordinal": 8,
+        "name": "costo",
+        "type_info": {
+          "type": "NewDecimal",
+          "flags": "NOT_NULL | NO_DEFAULT_VALUE",
+          "collation": 63,
+          "max_size": 12
+        },
+        "origin": {
+          "Table": {
+            "table": "gym_gestion_db.membresias",
+            "name": "costo"
+          }
+        }
+      }
+    ],
+    "parameters": {
+      "Right": 1
+    },
+    "nullable": [
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ]
+  },
+  "hash": "bd8a048e6667e75d55977574374b2c145147b78e9ccb36fa0a9b504008e8bae1"
+}

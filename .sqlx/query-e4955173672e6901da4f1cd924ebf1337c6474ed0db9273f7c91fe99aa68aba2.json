@@ -1,0 +1,116 @@
+{
+  "db_name": "MySQL",
+  "query": "SELECT nombre, apellidos, dni, telefono, correo, direccion FROM socios WHERE idsocio = ?;",
+  "describe": {
+    "columns": [
+      {
+        "ordinal": 0,
+        "name": "nombre",
+        "type_info": {
+          "type": "VarString",
+          "flags": "NOT_NULL | NO_DEFAULT_VALUE",
+          "collation": 255,
+          "max_size": 200
+        },
+        "origin": {
+          "Table": {
+            "table": "gym_gestion_db.socios",
+            "name": "nombre"
+          }
+        }
+      },
+      {
+        "ordinal": 1,
+        "name": "apellidos",
+        "type_info": {
+          "type": "VarString",
+          "flags": "NOT_NULL | NO_DEFAULT_VALUE",
+          "collation": 255,
+          "max_size": 200
+        },
+        "origin": {
+          "Table": {
+            "table": "gym_gestion_db.socios",
+            "name": "apellidos"
+          }
+        }
+      },
+      {
+        "ordinal": 2,
+        "name": "dni",
+        "type_info": {
+          "type": "VarString",
+          "flags": "NOT_NULL | UNIQUE_KEY | NO_DEFAULT_VALUE",
+          "collation": 255,
+          "max_size": 32
+        },
+        "origin": {
+          "Table": {
+            "table": "gym_gestion_db.socios",
+            "name": "dni"
+          }
+        }
+      },
+      {
+        "ordinal": 3,
+        "name": "telefono",
+        "type_info": {
+          "type": "VarString",
+          "flags": "",
+          "collation": 255,
+          "max_size": 60
+        },
+        "origin": {
+          "Table": {
+            "table": "gym_gestion_db.socios",
+            "name": "telefono"
+          }
+        }
+      },
+      {
+        "ordinal": 4,
+        "name": "correo",
+        "type_info": {
+          "type": "VarString",
+          "flags": "",
+          "collation": 255,
+          "max_size": 400
+        },
+        "origin": {
+          "Table": {
+            "table": "gym_gestion_db.socios",
+            "name": "correo"
+          }
+        }
+      },
+      {
+        "ordinal": 5,
+        "name": "direccion",
+        "type_info": {
+          "type": "VarString",
+          "flags": "",
+          "collation": 255,
+          "max_size": 600
+        },
+        "origin": {
+          "Table": {
+            "table": "gym_gestion_db.socios",
+            "name": "direccion"
+          }
+        }
+      }
+    ],
+    "parameters": {
+      "Right": 1
+    },
+    "nullable": [
+      false,
+      false,
+      false,
+      true,
+      true,
+      true
+    ]
+  },
+  "hash": "e4955173672e6901da4f1cd924ebf1337c6474ed0db9273f7c91fe99aa68aba2"
+}

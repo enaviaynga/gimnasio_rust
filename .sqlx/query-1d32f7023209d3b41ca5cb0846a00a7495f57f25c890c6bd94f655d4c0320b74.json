@@ -1,0 +1,12 @@
+{
+  "db_name": "MySQL",
+  "query": "INSERT INTO asistencia (idsocio, fecha, horaIngreso, resultadoValidacion)\n        VALUES (?, ?, ?, ?);",
+  "describe": {
+    "columns": [],
+    "parameters": {
+      "Right": 4
+    },
+    "nullable": []
+  },
+  "hash": "1d32f7023209d3b41ca5cb0846a00a7495f57f25c890c6bd94f655d4c0320b74"
+}

@@ -1,0 +1,12 @@
+{
+  "db_name": "MySQL",
+  "query": "INSERT INTO socios (nombre, apellidos, dni, telefono, correo, direccion) VALUES (?, ?, ?, ?, ?, ?);",
+  "describe": {
+    "columns": [],
+    "parameters": {
+      "Right": 6
+    },
+    "nullable": []
+  },
+  "hash": "70300b2eb8fa3495234e16794ec131cc9e55a46b3f879eade8ea00ce238d2d7e"
+}

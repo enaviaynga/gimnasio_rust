@@ -1,0 +1,31 @@
+{
+  "db_name": "MySQL",
+  "query": "\n      SELECT activo FROM socios WHERE idsocio = ?\n      ",
+  "describe": {
+    "columns": [
+      {
+        "ordinal": 0,
+        "name": "activo",
+        "type_info": {
+          "type": "Tiny",
+          "flags": "NOT_NULL",
+          "collation": 63,
+          "max_size": 1
+        },
+        "origin": {
+          "Table": {
+            "table": "gym_gestion_db.socios",
+            "name": "activo"
+          }
+        }
+      }
+    ],
+    "parameters": {
+      "Right": 1
+    },
+    "nullable": [
+      false
+    ]
+  },
+  "hash": "77f0ab9c1005df2f0d1fc5665bdf097c0c46ac64dc80d201755482158d826f61"
+}

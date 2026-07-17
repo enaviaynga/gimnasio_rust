@@ -1,0 +1,12 @@
+{
+  "db_name": "MySQL",
+  "query": "INSERT INTO venta (idUsuario, total) VALUES (?, ?)",
+  "describe": {
+    "columns": [],
+    "parameters": {
+      "Right": 2
+    },
+    "nullable": []
+  },
+  "hash": "a2cbfe12640e8121859ad3b1ea7319367b0533baffe315d3a8e398e6d0b36e9a"
+}

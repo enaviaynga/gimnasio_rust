@@ -1,0 +1,12 @@
+{
+  "db_name": "MySQL",
+  "query": "INSERT INTO membresias (idsocio, tipoMembresia, fechaInicio, fechaVencimiento, costo) VALUES\n            (?, ?, ?, ?, ?);",
+  "describe": {
+    "columns": [],
+    "parameters": {
+      "Right": 5
+    },
+    "nullable": []
+  },
+  "hash": "4ac336dcc37dbee3bb1f940aa59f04e1daa61c786ec76ecf87aa4a67761591ad"
+}

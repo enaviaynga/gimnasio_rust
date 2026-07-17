@@ -1,0 +1,99 @@
+{
+  "db_name": "MySQL",
+  "query": "SELECT idMembresia, tipoMembresia, fechaInicio, fechaVencimiento, costo\n        FROM membresias\n        WHERE idsocio = ?\n        ORDER BY fechaInicio DESC, idMembresia DESC\n        LIMIT 1;",
+  "describe": {
+    "columns": [
+      {
+        "ordinal": 0,
+        "name": "idMembresia",
+        "type_info": {
+          "type": "Long",
+          "flags": "NOT_NULL | PRIMARY_KEY | UNSIGNED | AUTO_INCREMENT",
+          "collation": 63,
+          "max_size": 10
+        },
+        "origin": {
+          "Table": {
+            "table": "gym_gestion_db.membresias",
+            "name": "idMembresia"
+          }
+        }
+      },
+      {
+        "ordinal": 1,
+        "name": "tipoMembresia",
+        "type_info": {
+          "type": "VarString",
+          "flags": "NOT_NULL | NO_DEFAULT_VALUE",
+          "collation": 255,
+          "max_size": 200
+        },
+        "origin": {
+          "Table": {
+            "table": "gym_gestion_db.membresias",
+            "name": "tipoMembresia"
+          }
+        }
+      },
+      {
+        "ordinal": 2,
+        "name": "fechaInicio",
+        "type_info": {
+          "type": "Date",
+          "flags": "NOT_NULL | BINARY | NO_DEFAULT_VALUE",
+          "collation": 63,
+          "max_size": 10
+        },
+        "origin": {
+          "Table": {
+            "table": "gym_gestion_db.membresias",
+            "name": "fechaInicio"
+          }
+        }
+      },
+      {
+        "ordinal": 3,
+        "name": "fechaVencimiento",
+        "type_info": {
+          "type": "Date",
+          "flags": "NOT_NULL | BINARY | NO_DEFAULT_VALUE",
+          "collation": 63,
+          "max_size": 10
+        },
+        "origin": {
+          "Table": {
+            "table": "gym_gestion_db.membresias",
+            "name": "fechaVencimiento"
+          }
+        }
+      },
+      {
+        "ordinal": 4,
+        "name": "costo",
+        "type_info": {
+          "type": "NewDecimal",
+          "flags": "NOT_NULL | NO_DEFAULT_VALUE",
+          "collation": 63,
+          "max_size": 12
+        },
+        "origin": {
+          "Table": {
+            "table": "gym_gestion_db.membresias",
+            "name": "costo"
+          }
+        }
+      }
+    ],
+    "parameters": {
+      "Right": 1
+    },
+    "nullable": [
+      false,
+      false,
+      false,
+      false,
+      false
+    ]
+  },
+  "hash": "cfc6cf92613d09bb4a49e584c18c037851a6b6a41937cacd49aa422749c425ad"
+}

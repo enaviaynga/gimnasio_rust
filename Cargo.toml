@@ -1,0 +1,71 @@
+[package]
+name = "gimnasio"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+freya = { workspace = true }
+bitflags  = { workspace = true }
+chrono = { workspace = true }
+rust_decimal = { workspace = true }
+sqlx = { workspace = true }
+anyhow = { workspace = true }
+tokio = { workspace = true }
+thiserror = { workspace = true }
+tracing = { workspace = true }
+tracing-subscriber = { workspace = true }
+itertools = { workspace = true }
+serde = { workspace = true }
+toml = { workspace = true }
+directories = { workspace = true }
+opener = { workspace = true }
+# propios
+hexagonal_gimnasio = { workspace = true }
+infraestructura = { workspace = true }
+
+[workspace]
+members = ["hexagonal_gimnasio", "infraestructura"]
+
+[workspace.dependencies]
+freya = { version = "0.4.0", features = ["router", "icons", "calendar"] }
+bitflags = "2.13.0"
+chrono = "=0.4.45"
+rust_decimal = "1.42.0"
+sqlx = { version = "0.9.0", features = ["mysql", "runtime-tokio", "tls-native-tls", "chrono", "rust_decimal"] }
+anyhow = "1.0.102"
+tokio = {version = "1.52.3", features = ["rt", "rt-multi-thread", "macros", "net"] }
+thiserror = "2.0.18"
+tracing = "0.1.44"
+tracing-subscriber = { version = "0.3.23", features = ["env-filter", "fmt"] }
+itertools = "0.15.0"
+derive_more = { version = "2.1.1", features = ["from_str", "display"] }
+serde = { version = "1.0.228", features = ["derive"] }
+toml = "1.1.2"
+directories = "6.0.0"
+opener = "0.8.5"
+# propios
+hexagonal_gimnasio = { path = "hexagonal_gimnasio" }
+infraestructura = { path = "infraestructura" }
+# para no tener problemas con los trait async en crates, hasta que salga la version propia de rust
+async-trait = "0.1.89"
+
+[profile.release]
+debug = 1       # Información completa de debug para tus funciones
+
+[profile.release.package.hexagonal_gimnasio]
+debug = 1       # Información completa de debug para tus funciones
+
+[profile.release.package.infraestructura]
+debug = 1       # Información completa de debug para tus funciones
+
+[profile.release.package."*"]
+debug = "none"       # Quita el debug de las librerías (ahorra memoria y espacio)
+
+# [profile.release]
+# Reduce las unidades de codegen. Menos unidades = optimiza mejor, pero tarda más.
+# Si quieres velocidad de compilación sacrificando un 1-2% de rendimiento ejecutable, sube esto a 16:
+# codegen-units = 16
+
+# Desactiva LTO (Link Time Optimization) si lo tienes en 'fat' o true.
+# 'thin' es un buen punto medio, pero 'false' u omitirlo es lo más rápido para compilar.
+# lto = "thin"

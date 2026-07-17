@@ -1,0 +1,252 @@
+{
+  "db_name": "MySQL",
+  "query": "\n            SELECT\n                s.idsocio, s.nombre, s.apellidos, s.dni, s.activo,\n                m.idMembresia, m.tipoMembresia, m.fechaInicio, m.fechaVencimiento, m.costo,\n                a.idAsistencia, a.fecha, a.horaIngreso, a.resultadoValidacion\n            FROM asistencia a\n            INNER JOIN socios s ON a.idsocio = s.idsocio\n            INNER JOIN membresias m ON s.idsocio = m.idsocio\n            WHERE a.idAsistencia = ?\n            LIMIT 1\n            ",
+  "describe": {
+    "columns": [
+      {
+        "ordinal": 0,
+        "name": "idsocio",
+        "type_info": {
+          "type": "Long",
+          "flags": "NOT_NULL | PRIMARY_KEY | UNSIGNED | AUTO_INCREMENT",
+          "collation": 63,
+          "max_size": 10
+        },
+        "origin": {
+          "Table": {
+            "table": "gym_gestion_db.socios",
+            "name": "idsocio"
+          }
+        }
+      },
+      {
+        "ordinal": 1,
+        "name": "nombre",
+        "type_info": {
+          "type": "VarString",
+          "flags": "NOT_NULL | NO_DEFAULT_VALUE",
+          "collation": 255,
+          "max_size": 200
+        },
+        "origin": {
+          "Table": {
+            "table": "gym_gestion_db.socios",
+            "name": "nombre"
+          }
+        }
+      },
+      {
+        "ordinal": 2,
+        "name": "apellidos",
+        "type_info": {
+          "type": "VarString",
+          "flags": "NOT_NULL | NO_DEFAULT_VALUE",
+          "collation": 255,
+          "max_size": 200
+        },
+        "origin": {
+          "Table": {
+            "table": "gym_gestion_db.socios",
+            "name": "apellidos"
+          }
+        }
+      },
+      {
+        "ordinal": 3,
+        "name": "dni",
+        "type_info": {
+          "type": "VarString",
+          "flags": "NOT_NULL | UNIQUE_KEY | NO_DEFAULT_VALUE",
+          "collation": 255,
+          "max_size": 32
+        },
+        "origin": {
+          "Table": {
+            "table": "gym_gestion_db.socios",
+            "name": "dni"
+          }
+        }
+      },
+      {
+        "ordinal": 4,
+        "name": "activo",
+        "type_info": {
+          "type": "Tiny",
+          "flags": "NOT_NULL",
+          "collation": 63,
+          "max_size": 1
+        },
+        "origin": {
+          "Table": {
+            "table": "gym_gestion_db.socios",
+            "name": "activo"
+          }
+        }
+      },
+      {
+        "ordinal": 5,
+        "name": "idMembresia",
+        "type_info": {
+          "type": "Long",
+          "flags": "NOT_NULL | PRIMARY_KEY | UNSIGNED | AUTO_INCREMENT",
+          "collation": 63,
+          "max_size": 10
+        },
+        "origin": {
+          "Table": {
+            "table": "gym_gestion_db.membresias",
+            "name": "idMembresia"
+          }
+        }
+      },
+      {
+        "ordinal": 6,
+        "name": "tipoMembresia",
+        "type_info": {
+          "type": "VarString",
+          "flags": "NOT_NULL | NO_DEFAULT_VALUE",
+          "collation": 255,
+          "max_size": 200
+        },
+        "origin": {
+          "Table": {
+            "table": "gym_gestion_db.membresias",
+            "name": "tipoMembresia"
+          }
+        }
+      },
+      {
+        "ordinal": 7,
+        "name": "fechaInicio",
+        "type_info": {
+          "type": "Date",
+          "flags": "NOT_NULL | BINARY | NO_DEFAULT_VALUE",
+          "collation": 63,
+          "max_size": 10
+        },
+        "origin": {
+          "Table": {
+            "table": "gym_gestion_db.membresias",
+            "name": "fechaInicio"
+          }
+        }
+      },
+      {
+        "ordinal": 8,
+        "name": "fechaVencimiento",
+        "type_info": {
+          "type": "Date",
+          "flags": "NOT_NULL | BINARY | NO_DEFAULT_VALUE",
+          "collation": 63,
+          "max_size": 10
+        },
+        "origin": {
+          "Table": {
+            "table": "gym_gestion_db.membresias",
+            "name": "fechaVencimiento"
+          }
+        }
+      },
+      {
+        "ordinal": 9,
+        "name": "costo",
+        "type_info": {
+          "type": "NewDecimal",
+          "flags": "NOT_NULL | NO_DEFAULT_VALUE",
+          "collation": 63,
+          "max_size": 12
+        },
+        "origin": {
+          "Table": {
+            "table": "gym_gestion_db.membresias",
+            "name": "costo"
+          }
+        }
+      },
+      {
+        "ordinal": 10,
+        "name": "idAsistencia",
+        "type_info": {
+          "type": "Long",
+          "flags": "NOT_NULL | PRIMARY_KEY | UNSIGNED | AUTO_INCREMENT",
+          "collation": 63,
+          "max_size": 10
+        },
+        "origin": {
+          "Table": {
+            "table": "gym_gestion_db.asistencia",
+            "name": "idAsistencia"
+          }
+        }
+      },
+      {
+        "ordinal": 11,
+        "name": "fecha",
+        "type_info": {
+          "type": "Date",
+          "flags": "NOT_NULL | BINARY | NO_DEFAULT_VALUE",
+          "collation": 63,
+          "max_size": 10
+        },
+        "origin": {
+          "Table": {
+            "table": "gym_gestion_db.asistencia",
+            "name": "fecha"
+          }
+        }
+      },
+      {
+        "ordinal": 12,
+        "name": "horaIngreso",
+        "type_info": {
+          "type": "Time",
+          "flags": "NOT_NULL | BINARY | NO_DEFAULT_VALUE",
+          "collation": 63,
+          "max_size": 10
+        },
+        "origin": {
+          "Table": {
+            "table": "gym_gestion_db.asistencia",
+            "name": "horaIngreso"
+          }
+        }
+      },
+      {
+        "ordinal": 13,
+        "name": "resultadoValidacion",
+        "type_info": {
+          "type": "VarString",
+          "flags": "NOT_NULL | NO_DEFAULT_VALUE",
+          "collation": 255,
+          "max_size": 200
+        },
+        "origin": {
+          "Table": {
+            "table": "gym_gestion_db.asistencia",
+            "name": "resultadoValidacion"
+          }
+        }
+      }
+    ],
+    "parameters": {
+      "Right": 1
+    },
+    "nullable": [
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ]
+  },
+  "hash": "5637cc5887bb6860ad0b953821ccf20b641ab1fc04257ee87c6170d9f56e0d39"
+}

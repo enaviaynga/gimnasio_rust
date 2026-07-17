@@ -1,0 +1,12 @@
+{
+  "db_name": "MySQL",
+  "query": "UPDATE socios SET telefono = ?, correo = ?, direccion = ? WHERE idsocio = ?",
+  "describe": {
+    "columns": [],
+    "parameters": {
+      "Right": 4
+    },
+    "nullable": []
+  },
+  "hash": "90a56574de6b1d440e35c5c1dac2212c4e142ef37759ef79d9da66557f144ccb"
+}

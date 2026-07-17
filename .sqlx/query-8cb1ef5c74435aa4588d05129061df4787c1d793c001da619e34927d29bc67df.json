@@ -1,0 +1,150 @@
+{
+  "db_name": "MySQL",
+  "query": "\n        SELECT\n            m.idMembresia AS \"id_membresia: u32\",\n            m.idsocio AS \"id_socio: u32\",\n            s.nombre AS \"nombre_socio\",\n            s.apellidos AS \"apellidos_socio\",\n            m.tipoMembresia AS \"tipo_membresia\",\n            m.costo AS \"costo: Decimal\",\n            m.fechaInicio AS \"fecha_inicio\",\n            m.fechaVencimiento AS \"fecha_vencimiento\"\n        FROM membresias m\n        INNER JOIN socios s ON m.idsocio = s.idsocio\n        WHERE m.fechaInicio BETWEEN ? AND ?\n        ORDER BY m.fechaInicio ASC;\n        ",
+  "describe": {
+    "columns": [
+      {
+        "ordinal": 0,
+        "name": "id_membresia: u32",
+        "type_info": {
+          "type": "Long",
+          "flags": "NOT_NULL | PRIMARY_KEY | UNSIGNED | AUTO_INCREMENT",
+          "collation": 63,
+          "max_size": 10
+        },
+        "origin": {
+          "Table": {
+            "table": "gym_gestion_db.membresias",
+            "name": "idMembresia"
+          }
+        }
+      },
+      {
+        "ordinal": 1,
+        "name": "id_socio: u32",
+        "type_info": {
+          "type": "Long",
+          "flags": "NOT_NULL | MULTIPLE_KEY | UNSIGNED | NO_DEFAULT_VALUE",
+          "collation": 63,
+          "max_size": 10
+        },
+        "origin": {
+          "Table": {
+            "table": "gym_gestion_db.membresias",
+            "name": "idsocio"
+          }
+        }
+      },
+      {
+        "ordinal": 2,
+        "name": "nombre_socio",
+        "type_info": {
+          "type": "VarString",
+          "flags": "NOT_NULL | NO_DEFAULT_VALUE",
+          "collation": 255,
+          "max_size": 200
+        },
+        "origin": {
+          "Table": {
+            "table": "gym_gestion_db.socios",
+            "name": "nombre"
+          }
+        }
+      },
+      {
+        "ordinal": 3,
+        "name": "apellidos_socio",
+        "type_info": {
+          "type": "VarString",
+          "flags": "NOT_NULL | NO_DEFAULT_VALUE",
+          "collation": 255,
+          "max_size": 200
+        },
+        "origin": {
+          "Table": {
+            "table": "gym_gestion_db.socios",
+            "name": "apellidos"
+          }
+        }
+      },
+      {
+        "ordinal": 4,
+        "name": "tipo_membresia",
+        "type_info": {
+          "type": "VarString",
+          "flags": "NOT_NULL | NO_DEFAULT_VALUE",
+          "collation": 255,
+          "max_size": 200
+        },
+        "origin": {
+          "Table": {
+            "table": "gym_gestion_db.membresias",
+            "name": "tipoMembresia"
+          }
+        }
+      },
+      {
+        "ordinal": 5,
+        "name": "costo: Decimal",
+        "type_info": {
+          "type": "NewDecimal",
+          "flags": "NOT_NULL | NO_DEFAULT_VALUE",
+          "collation": 63,
+          "max_size": 12
+        },
+        "origin": {
+          "Table": {
+            "table": "gym_gestion_db.membresias",
+            "name": "costo"
+          }
+        }
+      },
+      {
+        "ordinal": 6,
+        "name": "fecha_inicio",
+        "type_info": {
+          "type": "Date",
+          "flags": "NOT_NULL | BINARY | NO_DEFAULT_VALUE",
+          "collation": 63,
+          "max_size": 10
+        },
+        "origin": {
+          "Table": {
+            "table": "gym_gestion_db.membresias",
+            "name": "fechaInicio"
+          }
+        }
+      },
+      {
+        "ordinal": 7,
+        "name": "fecha_vencimiento",
+        "type_info": {
+          "type": "Date",
+          "flags": "NOT_NULL | BINARY | NO_DEFAULT_VALUE",
+          "collation": 63,
+          "max_size": 10
+        },
+        "origin": {
+          "Table": {
+            "table": "gym_gestion_db.membresias",
+            "name": "fechaVencimiento"
+          }
+        }
+      }
+    ],
+    "parameters": {
+      "Right": 2
+    },
+    "nullable": [
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ]
+  },
+  "hash": "8cb1ef5c74435aa4588d05129061df4787c1d793c001da619e34927d29bc67df"
+}

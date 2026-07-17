@@ -1,0 +1,48 @@
+{
+  "db_name": "MySQL",
+  "query": "SELECT tipoMembresia, fechaVencimiento\n        FROM membresias\n        WHERE idsocio = ?\n        ORDER BY fechaVencimiento DESC\n        LIMIT 1;",
+  "describe": {
+    "columns": [
+      {
+        "ordinal": 0,
+        "name": "tipoMembresia",
+        "type_info": {
+          "type": "VarString",
+          "flags": "NOT_NULL | NO_DEFAULT_VALUE",
+          "collation": 255,
+          "max_size": 200
+        },
+        "origin": {
+          "Table": {
+            "table": "gym_gestion_db.membresias",
+            "name": "tipoMembresia"
+          }
+        }
+      },
+      {
+        "ordinal": 1,
+        "name": "fechaVencimiento",
+        "type_info": {
+          "type": "Date",
+          "flags": "NOT_NULL | BINARY | NO_DEFAULT_VALUE",
+          "collation": 63,
+          "max_size": 10
+        },
+        "origin": {
+          "Table": {
+            "table": "gym_gestion_db.membresias",
+            "name": "fechaVencimiento"
+          }
+        }
+      }
+    ],
+    "parameters": {
+      "Right": 1
+    },
+    "nullable": [
+      false,
+      false
+    ]
+  },
+  "hash": "740471ac44138973b14a2f1a1d0a08169477dfa8697966af611f672f36d8431c"
+}

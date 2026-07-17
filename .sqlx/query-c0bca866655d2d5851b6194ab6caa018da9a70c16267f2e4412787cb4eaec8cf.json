@@ -1,0 +1,48 @@
+{
+  "db_name": "MySQL",
+  "query": "SELECT precio, stock FROM producto WHERE idProducto = ? FOR UPDATE",
+  "describe": {
+    "columns": [
+      {
+        "ordinal": 0,
+        "name": "precio",
+        "type_info": {
+          "type": "NewDecimal",
+          "flags": "NOT_NULL | NO_DEFAULT_VALUE",
+          "collation": 63,
+          "max_size": 12
+        },
+        "origin": {
+          "Table": {
+            "table": "gym_gestion_db.producto",
+            "name": "precio"
+          }
+        }
+      },
+      {
+        "ordinal": 1,
+        "name": "stock",
+        "type_info": {
+          "type": "Long",
+          "flags": "NOT_NULL | UNSIGNED | NO_DEFAULT_VALUE",
+          "collation": 63,
+          "max_size": 10
+        },
+        "origin": {
+          "Table": {
+            "table": "gym_gestion_db.producto",
+            "name": "stock"
+          }
+        }
+      }
+    ],
+    "parameters": {
+      "Right": 1
+    },
+    "nullable": [
+      false,
+      false
+    ]
+  },
+  "hash": "c0bca866655d2d5851b6194ab6caa018da9a70c16267f2e4412787cb4eaec8cf"
+}

@@ -1,0 +1,99 @@
+{
+  "db_name": "MySQL",
+  "query": "SELECT * FROM usuarios WHERE nombreUsuario = ?;",
+  "describe": {
+    "columns": [
+      {
+        "ordinal": 0,
+        "name": "idUsuario",
+        "type_info": {
+          "type": "Long",
+          "flags": "NOT_NULL | PRIMARY_KEY | UNSIGNED | AUTO_INCREMENT",
+          "collation": 63,
+          "max_size": 10
+        },
+        "origin": {
+          "Table": {
+            "table": "gym_gestion_db.usuarios",
+            "name": "idUsuario"
+          }
+        }
+      },
+      {
+        "ordinal": 1,
+        "name": "nombreUsuario",
+        "type_info": {
+          "type": "VarString",
+          "flags": "NOT_NULL | UNIQUE_KEY | NO_DEFAULT_VALUE",
+          "collation": 255,
+          "max_size": 200
+        },
+        "origin": {
+          "Table": {
+            "table": "gym_gestion_db.usuarios",
+            "name": "nombreUsuario"
+          }
+        }
+      },
+      {
+        "ordinal": 2,
+        "name": "contrasena",
+        "type_info": {
+          "type": "VarString",
+          "flags": "NOT_NULL | NO_DEFAULT_VALUE",
+          "collation": 255,
+          "max_size": 1020
+        },
+        "origin": {
+          "Table": {
+            "table": "gym_gestion_db.usuarios",
+            "name": "contrasena"
+          }
+        }
+      },
+      {
+        "ordinal": 3,
+        "name": "rol",
+        "type_info": {
+          "type": "VarString",
+          "flags": "NOT_NULL | NO_DEFAULT_VALUE",
+          "collation": 255,
+          "max_size": 120
+        },
+        "origin": {
+          "Table": {
+            "table": "gym_gestion_db.usuarios",
+            "name": "rol"
+          }
+        }
+      },
+      {
+        "ordinal": 4,
+        "name": "activo",
+        "type_info": {
+          "type": "Tiny",
+          "flags": "NOT_NULL",
+          "collation": 63,
+          "max_size": 1
+        },
+        "origin": {
+          "Table": {
+            "table": "gym_gestion_db.usuarios",
+            "name": "activo"
+          }
+        }
+      }
+    ],
+    "parameters": {
+      "Right": 1
+    },
+    "nullable": [
+      false,
+      false,
+      false,
+      false,
+      false
+    ]
+  },
+  "hash": "6f7ef9af6c453f7fe0bb46583918fc8d07d0eb0f0bad16d9021cea6aca078037"
+}

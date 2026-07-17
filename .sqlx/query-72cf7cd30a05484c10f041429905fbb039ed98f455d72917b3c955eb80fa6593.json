@@ -1,0 +1,99 @@
+{
+  "db_name": "MySQL",
+  "query": "SELECT * FROM asistencia",
+  "describe": {
+    "columns": [
+      {
+        "ordinal": 0,
+        "name": "idAsistencia",
+        "type_info": {
+          "type": "Long",
+          "flags": "NOT_NULL | PRIMARY_KEY | UNSIGNED | AUTO_INCREMENT",
+          "collation": 63,
+          "max_size": 10
+        },
+        "origin": {
+          "Table": {
+            "table": "gym_gestion_db.asistencia",
+            "name": "idAsistencia"
+          }
+        }
+      },
+      {
+        "ordinal": 1,
+        "name": "idsocio",
+        "type_info": {
+          "type": "Long",
+          "flags": "NOT_NULL | MULTIPLE_KEY | UNSIGNED | NO_DEFAULT_VALUE",
+          "collation": 63,
+          "max_size": 10
+        },
+        "origin": {
+          "Table": {
+            "table": "gym_gestion_db.asistencia",
+            "name": "idsocio"
+          }
+        }
+      },
+      {
+        "ordinal": 2,
+        "name": "fecha",
+        "type_info": {
+          "type": "Date",
+          "flags": "NOT_NULL | BINARY | NO_DEFAULT_VALUE",
+          "collation": 63,
+          "max_size": 10
+        },
+        "origin": {
+          "Table": {
+            "table": "gym_gestion_db.asistencia",
+            "name": "fecha"
+          }
+        }
+      },
+      {
+        "ordinal": 3,
+        "name": "horaIngreso",
+        "type_info": {
+          "type": "Time",
+          "flags": "NOT_NULL | BINARY | NO_DEFAULT_VALUE",
+          "collation": 63,
+          "max_size": 10
+        },
+        "origin": {
+          "Table": {
+            "table": "gym_gestion_db.asistencia",
+            "name": "horaIngreso"
+          }
+        }
+      },
+      {
+        "ordinal": 4,
+        "name": "resultadoValidacion",
+        "type_info": {
+          "type": "VarString",
+          "flags": "NOT_NULL | NO_DEFAULT_VALUE",
+          "collation": 255,
+          "max_size": 200
+        },
+        "origin": {
+          "Table": {
+            "table": "gym_gestion_db.asistencia",
+            "name": "resultadoValidacion"
+          }
+        }
+      }
+    ],
+    "parameters": {
+      "Right": 0
+    },
+    "nullable": [
+      false,
+      false,
+      false,
+      false,
+      false
+    ]
+  },
+  "hash": "72cf7cd30a05484c10f041429905fbb039ed98f455d72917b3c955eb80fa6593"
+}

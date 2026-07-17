@@ -1,0 +1,99 @@
+{
+  "db_name": "MySQL",
+  "query": "SELECT idProducto, nombreProducto, descripcion, precio, stock FROM producto",
+  "describe": {
+    "columns": [
+      {
+        "ordinal": 0,
+        "name": "idProducto",
+        "type_info": {
+          "type": "Long",
+          "flags": "NOT_NULL | PRIMARY_KEY | UNSIGNED | AUTO_INCREMENT",
+          "collation": 63,
+          "max_size": 10
+        },
+        "origin": {
+          "Table": {
+            "table": "gym_gestion_db.producto",
+            "name": "idProducto"
+          }
+        }
+      },
+      {
+        "ordinal": 1,
+        "name": "nombreProducto",
+        "type_info": {
+          "type": "VarString",
+          "flags": "NOT_NULL | NO_DEFAULT_VALUE",
+          "collation": 255,
+          "max_size": 400
+        },
+        "origin": {
+          "Table": {
+            "table": "gym_gestion_db.producto",
+            "name": "nombreProducto"
+          }
+        }
+      },
+      {
+        "ordinal": 2,
+        "name": "descripcion",
+        "type_info": {
+          "type": "Blob",
+          "flags": "BLOB",
+          "collation": 255,
+          "max_size": 262140
+        },
+        "origin": {
+          "Table": {
+            "table": "gym_gestion_db.producto",
+            "name": "descripcion"
+          }
+        }
+      },
+      {
+        "ordinal": 3,
+        "name": "precio",
+        "type_info": {
+          "type": "NewDecimal",
+          "flags": "NOT_NULL | NO_DEFAULT_VALUE",
+          "collation": 63,
+          "max_size": 12
+        },
+        "origin": {
+          "Table": {
+            "table": "gym_gestion_db.producto",
+            "name": "precio"
+          }
+        }
+      },
+      {
+        "ordinal": 4,
+        "name": "stock",
+        "type_info": {
+          "type": "Long",
+          "flags": "NOT_NULL | UNSIGNED | NO_DEFAULT_VALUE",
+          "collation": 63,
+          "max_size": 10
+        },
+        "origin": {
+          "Table": {
+            "table": "gym_gestion_db.producto",
+            "name": "stock"
+          }
+        }
+      }
+    ],
+    "parameters": {
+      "Right": 0
+    },
+    "nullable": [
+      false,
+      false,
+      true,
+      false,
+      false
+    ]
+  },
+  "hash": "748ce744446ce20443b07a3c15c53684bd30fe4228d1d020a1fd8a2850023ff0"
+}

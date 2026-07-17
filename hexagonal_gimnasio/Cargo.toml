@@ -1,0 +1,14 @@
+[package]
+name = "hexagonal_gimnasio"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+bitflags = { workspace = true }
+anyhow = { workspace = true }
+thiserror = { workspace = true }
+chrono = { workspace = true }
+rust_decimal = { workspace = true }
+derive_more = { workspace = true }
+# para no tener problemas con los trait async en crates, hasta que salga la version propia de rust
+async-trait = { workspace = true }

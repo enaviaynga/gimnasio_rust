@@ -1,0 +1,12 @@
+{
+  "db_name": "MySQL",
+  "query": "DELETE FROM asistencia\n        WHERE idAsistencia = ?;",
+  "describe": {
+    "columns": [],
+    "parameters": {
+      "Right": 1
+    },
+    "nullable": []
+  },
+  "hash": "f359c43828ece1a1a7e5a20c3131a0a080af454b19494333956125cc3d8f3a6b"
+}

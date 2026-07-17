@@ -1,0 +1,26 @@
+{
+  "db_name": "MySQL",
+  "query": "\n      SELECT EXISTS(\n          SELECT 1 FROM membresias\n          WHERE idsocio = ?\n            AND ? <= fechaVencimiento\n            AND ? >= fechaInicio\n      ) AS \"solapado!\"\n      ",
+  "describe": {
+    "columns": [
+      {
+        "ordinal": 0,
+        "name": "solapado!",
+        "type_info": {
+          "type": "LongLong",
+          "flags": "NOT_NULL | BINARY",
+          "collation": 63,
+          "max_size": 1
+        },
+        "origin": "Expression"
+      }
+    ],
+    "parameters": {
+      "Right": 3
+    },
+    "nullable": [
+      false
+    ]
+  },
+  "hash": "898adf86876c9e113641bda14d6dff6357d500bf4d5cf4166df491f57b19befc"
+}

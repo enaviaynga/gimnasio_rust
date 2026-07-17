@@ -1,0 +1,150 @@
+{
+  "db_name": "MySQL",
+  "query": "\n        SELECT\n            a.idAsistencia AS \"id_asistencia: u32\",\n            a.idsocio AS \"id_socio: u32\",\n            s.nombre AS \"nombre_socio\",\n            s.apellidos AS \"apellidos_socio\",\n            s.dni AS \"dni_socio\",\n            a.fecha AS \"fecha\",\n            a.horaIngreso AS \"hora_ingreso\",\n            a.resultadoValidacion AS \"resultado_validacion\"\n        FROM asistencia a\n        INNER JOIN socios s ON a.idsocio = s.idsocio\n        WHERE a.fecha BETWEEN ? AND ?\n        ORDER BY a.fecha ASC, a.horaIngreso ASC;\n        ",
+  "describe": {
+    "columns": [
+      {
+        "ordinal": 0,
+        "name": "id_asistencia: u32",
+        "type_info": {
+          "type": "Long",
+          "flags": "NOT_NULL | PRIMARY_KEY | UNSIGNED | AUTO_INCREMENT",
+          "collation": 63,
+          "max_size": 10
+        },
+        "origin": {
+          "Table": {
+            "table": "gym_gestion_db.asistencia",
+            "name": "idAsistencia"
+          }
+        }
+      },
+      {
+        "ordinal": 1,
+        "name": "id_socio: u32",
+        "type_info": {
+          "type": "Long",
+          "flags": "NOT_NULL | MULTIPLE_KEY | UNSIGNED | NO_DEFAULT_VALUE",
+          "collation": 63,
+          "max_size": 10
+        },
+        "origin": {
+          "Table": {
+            "table": "gym_gestion_db.asistencia",
+            "name": "idsocio"
+          }
+        }
+      },
+      {
+        "ordinal": 2,
+        "name": "nombre_socio",
+        "type_info": {
+          "type": "VarString",
+          "flags": "NOT_NULL | NO_DEFAULT_VALUE",
+          "collation": 255,
+          "max_size": 200
+        },
+        "origin": {
+          "Table": {
+            "table": "gym_gestion_db.socios",
+            "name": "nombre"
+          }
+        }
+      },
+      {
+        "ordinal": 3,
+        "name": "apellidos_socio",
+        "type_info": {
+          "type": "VarString",
+          "flags": "NOT_NULL | NO_DEFAULT_VALUE",
+          "collation": 255,
+          "max_size": 200
+        },
+        "origin": {
+          "Table": {
+            "table": "gym_gestion_db.socios",
+            "name": "apellidos"
+          }
+        }
+      },
+      {
+        "ordinal": 4,
+        "name": "dni_socio",
+        "type_info": {
+          "type": "VarString",
+          "flags": "NOT_NULL | UNIQUE_KEY | NO_DEFAULT_VALUE",
+          "collation": 255,
+          "max_size": 32
+        },
+        "origin": {
+          "Table": {
+            "table": "gym_gestion_db.socios",
+            "name": "dni"
+          }
+        }
+      },
+      {
+        "ordinal": 5,
+        "name": "fecha",
+        "type_info": {
+          "type": "Date",
+          "flags": "NOT_NULL | BINARY | NO_DEFAULT_VALUE",
+          "collation": 63,
+          "max_size": 10
+        },
+        "origin": {
+          "Table": {
+            "table": "gym_gestion_db.asistencia",
+            "name": "fecha"
+          }
+        }
+      },
+      {
+        "ordinal": 6,
+        "name": "hora_ingreso",
+        "type_info": {
+          "type": "Time",
+          "flags": "NOT_NULL | BINARY | NO_DEFAULT_VALUE",
+          "collation": 63,
+          "max_size": 10
+        },
+        "origin": {
+          "Table": {
+            "table": "gym_gestion_db.asistencia",
+            "name": "horaIngreso"
+          }
+        }
+      },
+      {
+        "ordinal": 7,
+        "name": "resultado_validacion",
+        "type_info": {
+          "type": "VarString",
+          "flags": "NOT_NULL | NO_DEFAULT_VALUE",
+          "collation": 255,
+          "max_size": 200
+        },
+        "origin": {
+          "Table": {
+            "table": "gym_gestion_db.asistencia",
+            "name": "resultadoValidacion"
+          }
+        }
+      }
+    ],
+    "parameters": {
+      "Right": 2
+    },
+    "nullable": [
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ]
+  },
+  "hash": "db6b0b6d4e8b90376a001db201515e78734205d8581764da342e25ae79dfeb9d"
+}

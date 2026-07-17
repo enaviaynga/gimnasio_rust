@@ -8,7 +8,6 @@ use infraestructura::persistencia::mysql::contenedor::ContenedorRepos;
 
 use crate::vista::componentes::alerta::mensaje_alerta;
 
-// pendiente rediseñar para añadir boton mostrar/ocultar contraseña
 pub(crate) fn login() -> impl IntoElement {
   let username = use_state(|| "admin_carlos".to_string());
   let contraseña = use_state(|| "Admin-123".to_string());
@@ -59,7 +58,6 @@ pub(crate) enum EstadoLogin {
   Exito,
 }
 
-// --- Título del Formulario ---
 fn titulo_login() -> impl IntoElement {
   label()
     .text("Iniciar Sesión")
@@ -68,7 +66,6 @@ fn titulo_login() -> impl IntoElement {
     .margin(Gaps::new(0.0, 0.0, 16.0, 0.0))
 }
 
-// --- Cuadro de texto Usuario ---
 fn input_usuario(
   username: State<String>,
   mut login_estado: State<EstadoLogin>,
@@ -97,7 +94,6 @@ fn input_usuario(
     )
 }
 
-// --- Cuadro de texto Contraseña ---
 fn input_contraseña(
   contraseña: State<String>,
   mut login_estado: State<EstadoLogin>,
@@ -161,7 +157,6 @@ fn input_contraseña(
     )
 }
 
-// Boton login/acceso
 fn boton_login(
   username: State<String>,
   contraseña: State<String>,
@@ -221,7 +216,6 @@ fn boton_login(
 }
 
 // pendiente, usar match para un manejo mas elegante
-// Alerta de error
 fn alerta(login_estado: &State<EstadoLogin>) -> Option<impl IntoElement> {
   match *login_estado.read() {
     EstadoLogin::Cerrado => None,
