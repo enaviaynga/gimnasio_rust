@@ -39,12 +39,12 @@ impl Component for ContenedorGeneral {
           .child(
             rect()
               .horizontal()
-              .child(barra_btn(
-                &empleado_global,
-                Permisos::SIN_PERMISOS,
-                "Inicio",
-                Rutas::Inicio,
-              ))
+              // .child(barra_btn(
+              //   &empleado_global,
+              //   Permisos::SIN_PERMISOS,
+              //   "Inicio",
+              //   Rutas::Inicio,
+              // ))
               .child(barra_btn(
                 &empleado_global,
                 Permisos::SOCIOS,
